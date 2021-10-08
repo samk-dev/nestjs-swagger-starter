@@ -1,10 +1,10 @@
 {
   "name": "lynx-ecommerce",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Headless e-commerce with Swagger REST API && GraphQL",
+  "author": "Sam K <hello@samk.dev>",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.0.2",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "reflect-metadata": "^0.1.13",
