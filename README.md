@@ -1,3 +1,7 @@
+# Lynx E-Commerce
+
+**Work in progress 🦺**
+
 ## Description
 
 Headless e-commerce with Swagger Rest API && GraphQL
@@ -5,7 +9,7 @@ Headless e-commerce with Swagger Rest API && GraphQL
 ## Installation
 
 ```bash
-$ npm install
+npm install
 ```
 
 ## Running the app
