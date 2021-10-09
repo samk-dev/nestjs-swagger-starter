@@ -26,7 +26,8 @@ async function bootstrap() {
     },
     customSiteTitle: `${process.env.APP_NAME} API Documentation V ${process.env.APP_VERSION}`,
     customCss:
-      ".topbar-wrapper img {content:url('../assets/logo.svg'); width:50px; height:auto;}",
+      ".topbar-wrapper img {content:url('../assets/img/logo-full.svg'); width:85px; height:auto;} .swagger-ui .info {margin: 20px 0 0 0}",
+    customfavIcon: '../assets/img/logo.svg',
   };
 
   const swaggerDocument = SwaggerModule.createDocument(app, swaggerOptions);
