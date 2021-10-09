@@ -6,36 +6,59 @@
 
 Headless e-commerce with Swagger Rest API && GraphQL
 
-## Installation
+## System Requirements
+
+**Locally:**
+
+[NodeJS v14.x](https://nodejs.dev)
+
+[NPM v7.x](https://nodejs.dev)
+
+_check nvm to run multiple versions of node && npm [nvm.sh](https://github.com/nvm-sh/nvm/blob/master/README.md)_
+
+[Postgres SQL](https://www.postgresql.org)
+
+DB client to manage the database such as [pgAdmin](https://www.pgadmin.org) or [Table Plus](https://tableplus.com)
 
 ```bash
-npm install
-```
+# 1. Get your .env file ready (Adjust the ports to available ports on your system)
+$ env-example mv .env
 
-## Running the app
+# 2. Install dependencies
+$ npm install
 
-```bash
-# development
-$ npm run start
+# 3. Build assets
+$ npm run build
 
-# watch mode
+# 4. Serve the app in watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
+**Docker && Docker Compose**
+
+To avoid the headeach of meeting the application versions requirements, you can use the power of docker && docker compose to run && test the application locally
+
+**macos && linuxs**
+
+[Docker && Docker Compose](https://www.docker.com/get-started)
+
+**windows**
+
+[Docker Docs windows](https://docs.docker.com/docker-for-windows/install/)
+
+[Linux Subsystem WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 ```bash
-# unit tests
-$ npm run test
+# 1. Get your .env file ready (Adjust the ports to available ports on your system)
+$ env-example mv .env
 
-# e2e tests
-$ npm run test:e2e
+# 2. Run docker-compose (go have a ☕️ first build will take some time...)
+$ docker-compose up
 
-# test coverage
-$ npm run test:cov
+# or
+
+# Run docker-compose in detached mode
+$ docker-compose up -d
 ```
 
 ## License
