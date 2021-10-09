@@ -7,8 +7,8 @@ services:
     restart: unless-stopped
     tty: true
     volumes:
-      - .:/src/app
-      - ./node_modules:/src/app/node_modules
+      - .:/src/app:rw
+      - ./src/app/node_modules
     command: npm run start:dev
     environment:
       PORT: ${APP_PORT}
@@ -16,8 +16,23 @@ services:
       - ${APP_PORT}:3000
       # debugging port
       - ${APP_PORT_DEBUG}:9229
-    # depends_on:
-    #   - database
+    depends_on:
+      - database
+    networks:
+      - lynx_ecommerce
+
+  database:
+    image: postgres:14.0-alpine
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./.db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - ${DB_PORT}:5432
     networks:
       - lynx_ecommerce
 

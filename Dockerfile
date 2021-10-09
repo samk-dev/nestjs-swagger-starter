@@ -2,11 +2,11 @@ FROM node:14.17.6
 
 LABEL dev.samk="hello@samk.dev"
 
+# Set node env to development
+ARG NODE_ENV=development
+
 # Install NPM v7.24.1
 RUN npm i -g npm@7.24.1
-
-# Install NestJS CLI globally
-RUN npm i -g @nestjs/cli
 
 # Specify our working directory
 WORKDIR /src/app
@@ -14,14 +14,14 @@ WORKDIR /src/app
 # Copy the package.jsons from host to container
 COPY package*.json ./
 
-# Install all the deps
-RUN npm install
+# Copy docker init script
+COPY docker-start.sh ./
 
 # Bundle app source && copy all project files
 COPY . .
 
-# Set node env to development
-ARG NODE_ENV=development
+# Give execution permision to docker-start.sh
+RUN chmod 777 docker-start.sh
 
-# Build the app && generate /dist
-RUN npm run build
+# Execute docker-start.sh
+RUN ./docker-start.sh

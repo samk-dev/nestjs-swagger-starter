@@ -7,7 +7,7 @@ export class ProductsControllerV1 {
   @Get('products')
   findAll(): string {
     console.log(process.env);
-    return 'this will return products';
+    return 'this will return productsss';
   }
 
   @Post('products')
