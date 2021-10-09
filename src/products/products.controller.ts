@@ -6,7 +6,7 @@ import { Controller, Get, Post } from '@nestjs/common';
 export class ProductsControllerV1 {
   @Get('products')
   findAll(): string {
-    console.log(process.env.DB_PORT);
+    console.log(process.env);
     return 'this will return products';
   }
 

@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - .:/src/app
+      - ./node_modules:/src/app/node_modules
+    command: npm run start:dev
+    environment:
+      PORT: ${APP_PORT}
+    ports:
+      - ${APP_PORT}:3000
+      # debugging port
+      - ${APP_PORT_DEBUG}:9229
+    # depends_on:
+    #   - database
+    networks:
+      - lynx_ecommerce
+
+networks:
+  lynx_ecommerce:
+    driver: bridge
