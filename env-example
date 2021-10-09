@@ -1,12 +1,19 @@
 # Generics
 APP_NAME='Lynx E-Commerce'
 APP_VERSION='0.0.1'
-APP_PORT=3000
+APP_PORT=8080
+APP_PORT_DEFAULT=3000
+APP_PORT_DEBUG=9229
 
 # DB Connection
 DB_DRIVER='pgsql'
 DB_HOST='localhost'
-DB_PORT=5050
+DB_PORT=35000
 DB_NAME='lynx_ecommerce_db'
 DB_USER='superUser'
 DB_PASSWORD='superPassword'
+
+# DB Admin - Docker
+DB_ADMIN_PORT=5050
+DB_ADMIN_USER='hello@samk.dev'
+DB_ADMIN_PASSWORD=${DB_PASSWORD}

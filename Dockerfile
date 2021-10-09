@@ -8,6 +8,9 @@ ARG NODE_ENV=development
 # Install NPM v7.24.1
 RUN npm i -g npm@7.24.1
 
+# Install NestJS cli globally
+RUN npm i -g @nestjs/cli
+
 # Specify our working directory
 WORKDIR /src/app
 
@@ -16,6 +19,9 @@ COPY package*.json ./
 
 # Copy docker init script
 COPY docker-start.sh ./
+
+# Install dependecies
+RUN npm install
 
 # Bundle app source && copy all project files
 COPY . .
